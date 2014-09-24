@@ -7,7 +7,7 @@ import proguard.{Configuration=>ProGuardConfiguration, ProGuard, ConfigurationPa
 
 import java.io.File
 import java.util.Properties
-
+ 
 object ProguardPlugin extends Plugin {
   def keepLimitedSerializability = """
 	-keepclassmembers class * implements java.io.Serializable {
@@ -18,7 +18,7 @@ object ProguardPlugin extends Plugin {
 	java.lang.Object readResolve();
 	}
                                    	"""
-
+ 
   def keepSerializability = "-keep class * implements java.io.Serializable { *; }"
 
   def keepAllScala = "-keep class scala.** { *; }"
